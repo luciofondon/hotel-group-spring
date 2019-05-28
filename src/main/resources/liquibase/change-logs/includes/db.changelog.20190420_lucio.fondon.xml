@@ -1,0 +1,65 @@
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="20190020_lucio.fondon_1" author="axel.sanchez">
+
+        <insert tableName="COUNTRY">
+            <column name="ID" value="0" />
+            <column name="NAME" value="España" />
+            <column name="CODE"  value="SP" />
+            <column name="DISABLE_DATE"  value="NULL" />
+            <column name="CREATED_BY" value="system" />
+            <column name="CREATION_DATE" value="2018-08-03 13:51:14" />
+            <column name="LAST_MODIFIED_BY" value="system" />
+            <column name="MODIFICATION_DATE" value="2018-08-03 13:51:14"  />
+        </insert>
+
+        <insert tableName="COUNTRY">
+            <column name="ID" value="1" />
+            <column name="NAME" value="Francia" />
+            <column name="CODE"  value="FR" />
+            <column name="DISABLE_DATE"  value="NULL" />
+            <column name="CREATED_BY" value="system" />
+            <column name="CREATION_DATE" value="2018-08-03 13:51:14" />
+            <column name="LAST_MODIFIED_BY" value="system" />
+            <column name="MODIFICATION_DATE" value="2018-08-03 13:51:14"  />
+        </insert>
+
+        <insert tableName="COUNTRY">
+            <column name="ID" value="2" />
+            <column name="NAME" value="Italia" />
+            <column name="CODE"  value="IT" />
+            <column name="DISABLE_DATE"  value="NULL" />
+            <column name="CREATED_BY" value="system" />
+            <column name="CREATION_DATE" value="2018-08-03 13:51:14" />
+            <column name="LAST_MODIFIED_BY" value="system" />
+            <column name="MODIFICATION_DATE" value="2018-08-03 13:51:14"  />
+        </insert>
+
+        <insert tableName="COUNTRY">
+            <column name="ID" value="3" />
+            <column name="NAME" value="Italia" />
+            <column name="CODE"  value="IT" />
+            <column name="DISABLE_DATE"  value="NULL" />
+            <column name="CREATED_BY" value="system" />
+            <column name="CREATION_DATE" value="2018-08-03 13:51:14" />
+            <column name="LAST_MODIFIED_BY" value="system" />
+            <column name="MODIFICATION_DATE" value="2018-08-03 13:51:14"  />
+        </insert>
+
+        <insert tableName="COUNTRY">
+            <column name="ID" value="4" />
+            <column name="NAME" value="Italia" />
+            <column name="CODE"  value="IT" />
+            <column name="DISABLE_DATE"  value="NULL" />
+            <column name="CREATED_BY" value="system" />
+            <column name="CREATION_DATE" value="2018-08-03 13:51:14" />
+            <column name="LAST_MODIFIED_BY" value="system" />
+            <column name="MODIFICATION_DATE" value="2018-08-03 13:51:14"  />
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

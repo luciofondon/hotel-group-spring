@@ -1,0 +1,127 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="lucio.fondon" id="1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+
+        <createTable tableName="HOTEL">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)"/>
+            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="ADDRESS" type="VARCHAR(255)"/>
+            <column name="STARS" type="NUMBER"/>
+        </createTable>
+
+        <insert tableName="HOTEL">
+            <column name="NAME" value="Hotel Paraiso"/>
+            <column name="DESCRIPTION" value="Hotel vacacional"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="4"/>
+        </insert>
+        <insert tableName="HOTEL">
+            <column name="NAME" value="Hotel SOL"/>
+            <column name="DESCRIPTION"  value="Hotel vacacional"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="4"/>
+        </insert>
+        <insert tableName="HOTEL">
+            <column name="NAME"  value="Hotel Extremadura"/>
+            <column name="DESCRIPTION"  value="Hotel vacacional"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="2"/>
+        </insert>
+        <insert tableName="HOTEL">
+            <column name="NAME"  value="Hotel Playa"/>
+            <column name="DESCRIPTION" value="Hotel vacacional"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="4"/>
+        </insert>
+        <insert tableName="HOTEL">
+            <column name="NAME"  value="Hotel Centro"/>
+            <column name="DESCRIPTION"  value="Hotel vacacional"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="3"/>
+        </insert>
+        <insert tableName="HOTEL">
+            <column name="NAME"  value="Hotel Ocean"/>
+            <column name="DESCRIPTION"  value="Hotel vacacional y de relax"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="4"/>
+        </insert>
+        <insert tableName="HOTEL">
+            <column name="NAME"  value="Hotel Palma"/>
+            <column name="DESCRIPTION"  value="Hotel vacacional"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="4"/>
+        </insert>
+        <insert tableName="HOTEL">
+            <column name="NAME"  value="Hotel Ibiza"/>
+            <column name="DESCRIPTION"  value="Hotel vacacional"/>
+            <column name="ADDRESS" value="Avigunda Pascual"/>
+            <column name="STARS"  value="4"/>
+        </insert>
+    </changeSet>
+
+
+    <changeSet author="lucio.fondon" id="2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+
+        <createTable tableName="ROOM">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)"/>
+            <column name="NUMBER" type="NUMBER"/>
+            <column name="CHECKIN" type="BIT(1)"/>
+            <column name="DOUBLE_BED" type="BIT(1)"/>
+            <column name="CLEANING" type="BIT(1)"/>
+            <column name="HOTEL_ID" type="BIGINT"/>
+        </createTable>
+
+    </changeSet>
+
+    <changeSet author="lucio.fondon" id="3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="HOTEL_ID"
+                                 baseTableName="ROOM"
+                                 constraintName="FK_CURRENCY"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="ID"
+                                 referencedTableName="HOTEL"/>
+    </changeSet>
+
+    <changeSet author="lucio.fondon" id="4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <insert tableName="ROOM">
+            <column name="NAME" value="Habitación doble"/>
+            <column name="NUMBER" value="1"/>
+            <column name="CHECKIN" value="1"/>
+            <column name="DOUBLE_BED" value="0"/>
+            <column name="CLEANING" value="1"/>
+            <column name="HOTEL_ID" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="lucio.fondon" id="5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="COUNTRY">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="CODE" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DISABLE_DATE" type="date"/>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATION_DATE" type="datetime"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="MODIFICATION_DATE" type="datetime"/>
+            <column name="ACTIVE" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
